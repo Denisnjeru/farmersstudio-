@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -26,3 +27,8 @@ def register(request):
         form = UserCreationForm()
     page_title = 'User Registration'
     return render(request, 'registration/register.html', {'page_title': page_title, 'form': form})
+
+@login_required
+def my_account(request):
+    page_title = "My Account"
+    return render(request, 'registration/my_account', {'page_title':page_title})

@@ -148,4 +148,5 @@ META_KEYWORDS = 'Music, instruments, music accessories, musician supplies'
 META_DESCRIPTION = 'Modern Musician is an online supplier of instruments,sheet music, and other accessories for ' \
                    'musicians '
 
-
+# account for which users will be redirected to after they login
+LOGIN_REDIRECT_URL = '/accounts/my_account/'

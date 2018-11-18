@@ -9,12 +9,12 @@
 <ul>
     <li>
         {% if user.is_authenticated %}
-            <a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>
+            <a href="{%  url 'accounts:logout' %}">Logout</a>
         {% else %}
             <a href="{% url 'accounts:register' %}">Sign Up</a>
             </li>
             <li>
-            <a href="{% url 'django.contrib.auth.views.login' %}">Login</a>
+            <a href="{% url 'accounts:login' %}">Login</a>
         {% endif %}
     </li>
 </ul>

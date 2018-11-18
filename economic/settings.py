@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'utils.apps.UtilsConfig',
     'cart.apps.CartConfig',
     'accounts.apps.AccountsConfig',
+    'mpesa.apps.MpesaConfig',
 ]
 
 MIDDLEWARE = [

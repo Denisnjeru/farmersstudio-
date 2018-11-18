@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
@@ -9,6 +9,9 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import (authenticate, get_user_model, login, logout)
 from .forms import UserLoginForm
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 # Create your views here.
 
 
@@ -45,14 +48,34 @@ def login_view(request):
     return render(request, 'registration/login.html', {'form': form, 'page_title': page_title})
 
 
-
 @login_required
 def my_account(request):
     page_title = "My Account"
     return render(request, 'registration/my_account.html', {'page_title':page_title})
+
 
 @login_required
 def logout_view(request):
     logout(request)
     return render(request, 'registration/logged_out.html')
 
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('accounts:password_change_done')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'registration/password_change_form.html', {'form': form})
+
+
+@login_required
+def password_change_done(request):
+    return render(request, 'registration/password_change_done.html')

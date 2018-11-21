@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'utils.apps.UtilsConfig',
     'cart.apps.CartConfig',
     'accounts.apps.AccountsConfig',
-    'mpesa.apps.MpesaConfig',
+    'payment.apps.PaymentConfig',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -151,3 +152,9 @@ META_DESCRIPTION = 'Modern Musician is an online supplier of instruments,sheet m
 
 # account for which users will be redirected to after they login
 LOGIN_REDIRECT_URL = '/accounts/my_account/'
+
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL = "21325482f@gmail.com"
+PAYPAL_TEST = True
+#PAYPAL_URL = "https://api.sandbox.paypal.com/"+"access_token$sandbox$nxkqb2z5ztyvq6mp$e8f1491427d66d1a0200e0dd0ee45eca"

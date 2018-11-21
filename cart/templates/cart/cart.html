@@ -25,7 +25,7 @@ Cart Subtotal:
 {% if cart_items %}
 <tr>
 <th class="right" colspan="6">
-<a href="/url/to/checkout/">Checkout Now</a>
+<a href="{% url 'payment:payment_process' %}">Checkout Now</a>
 </th>
 </tr>
 {% endif %}

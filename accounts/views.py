@@ -51,7 +51,7 @@ def login_view(request):
 @login_required
 def my_account(request):
     page_title = "My Account"
-    return render(request, 'registration/my_account.html', {'page_title':page_title})
+    return render(request, 'registration/my_account.html', {'page_title': page_title})
 
 
 @login_required

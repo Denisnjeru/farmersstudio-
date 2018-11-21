@@ -1,0 +1,11 @@
+{% extends 'catalog.html' %}
+{% block content %}
+<h1>Pay using paypal</h1>
+<FORM  action="https://www.sandbox.paypal.com/cgi-bin/webscrs" method="post" >
+{% csrf_token %}
+<INPUT TYPE="hidden" name="variableName" value="allowedValue">
+{{ form.render }}
+
+</FORM>
+
+{% endblock %}

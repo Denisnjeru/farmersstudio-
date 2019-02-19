@@ -4,7 +4,7 @@ from .models import Order
 from decimal import Decimal
 from django.conf import settings
 from django.urls import reverse
-from paypal.standard.forms import PayPalPaymentsForm
+#from paypal.standard.forms import PayPalPaymentsForm
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
@@ -18,7 +18,7 @@ def payment_done(request):
 def payment_canceled(request):
     return render(request, 'payment/canceled.html')
 
-
+"""
 def payment_process(request):
     cart_id = request.session.get('cart_id')
     items = cart.get_cart_items(request)
@@ -30,12 +30,13 @@ def payment_process(request):
         'item_name': str(items),
         'invoice': str(cart_id),
         'currency_code': 'USD',
-        "notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
+        #"notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
         "return": request.build_absolute_uri(reverse('payment:payment_done')),
         "cancel_return": request.build_absolute_uri(reverse('payment:payment_canceled')),
         #'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
         #'return_url': 'http://{}{}'.format(host, reverse('payment:payment_done')),
         #'cancel_return': 'http://{}{}'.format(host, reverse('payment:payment_canceled')),
     }
-    form = PayPalPaymentsForm(initial=paypal_dict)
-    return render(request, 'payment/process.html', {'form': form, 'page_title': page_title})
+    #form = PayPalPaymentsForm(initial=paypal_dict)
+    return render(request, 'payment/process.html', { 'page_title': page_title})
+"""

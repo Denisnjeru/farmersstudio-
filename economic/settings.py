@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'accounts.apps.AccountsConfig',
     'payment.apps.PaymentConfig',
-    'paypal.standard.ipn',
+    #'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -94,8 +94,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'economic',
         'USER': 'root',
-        'PASSWORD': 'immaculate',
-        'HOST': 'localhost',
+        'PASSWORD': 'Immaculate0',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }

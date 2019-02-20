@@ -145,10 +145,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-SITE_NAME = 'Modern Musician'
-META_KEYWORDS = 'Music, instruments, music accessories, musician supplies'
-META_DESCRIPTION = 'Modern Musician is an online supplier of instruments,sheet music, and other accessories for ' \
-                   'musicians '
+SITE_NAME = 'Modern Laptop Solutions'
+META_KEYWORDS = 'Computers, Laptops(Personal Computers), Computer accessories, Tech supplies'
+META_DESCRIPTION = 'Modern Laptop Solutions is an online supplier of Laptops,Personal Computers, and computers related  accessories for ' \
+                   'computer solutions '
 
 # account for which users will be redirected to after they login
 LOGIN_REDIRECT_URL = '/accounts/my_account/'

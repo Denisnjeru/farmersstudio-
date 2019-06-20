@@ -95,10 +95,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'economic',
-        'USER': 'denis',
+        'USER': 'denis@deniswebapps',
         'PASSWORD': 'Immaculate0',
         'HOST': 'deniswebapps.database.windows.net',
         'PORT': '3306',
+        'OPTIONS': {
+            'ssl': {'ssl-ca': os.path.join(BASE_DIR, "BaltimoreCyberTrustRoot.crt.pem.cer")}
+        }
     }
 }
 

@@ -30,7 +30,9 @@ DEBUG = True
 # Site id
 SITE_ID = 1
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'farmersstudio.azurewebsites.net',
+]
 
 # Application definition
 

@@ -148,9 +148,11 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+"""
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+"""
 
 SITE_NAME = 'Modern Laptop Solutions'
 META_KEYWORDS = 'Computers, Laptops(Personal Computers), Computer accessories, Tech supplies'

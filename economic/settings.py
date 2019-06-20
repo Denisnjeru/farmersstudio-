@@ -95,9 +95,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'economic',
-        'USER': 'root',
+        'USER': 'denis',
         'PASSWORD': 'Immaculate0',
-        'HOST': '127.0.0.1',
+        'HOST': 'deniswebapps.database.windows.net',
         'PORT': '3306',
     }
 }
